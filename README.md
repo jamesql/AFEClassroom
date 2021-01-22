@@ -26,6 +26,7 @@ AFEClassroom is a open source virtual classroom project to respond to a AFE prom
 - [ ] Auto-Attendance  
 - [ ] Auto-Participation (w/ Data)
 - [ ] Raise Hand
+- [ ] Add breakout rooms
 - [ ] Auto-Class Schedule System
 - [ ] School Anouncements 
 - [ ] Chrome Reminder Extension
