@@ -1,5 +1,6 @@
 # AFEClassroom ![build](https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat)
-Open source virtual classroom software written for AFE response.
+============================
+> Open source virtual classroom software written for AFE response.
 
 ## Project Purpose
 AFEClassroom is a open source virtual classroom project to respond to a AFE prompt.
@@ -31,3 +32,6 @@ AFEClassroom is a open source virtual classroom project to respond to a AFE prom
 - [ ] Chrome Reminder Extension
 - [ ] Add Redis
 - [ ] Assemblys
+
+### LICENSE
+> This project is currently using an MIT License. For more information please read `LICENSE.md`
