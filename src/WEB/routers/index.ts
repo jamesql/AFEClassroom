@@ -5,7 +5,7 @@ const app = express.Router();
 
 app
     .get("/", async (req,res) => {
-        res.send("test");
+        res.render("index");
     });
 
 export default app;
