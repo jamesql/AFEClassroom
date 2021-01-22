@@ -33,4 +33,4 @@ AFEClassroom is a open source virtual classroom project to respond to a AFE prom
 - [ ] Assemblys
 
 ### LICENSE
-> This project is currently using an MIT License. For more information please read `LICENSE.md`
+> This project is currently using an MIT License. For more information please read `LICENSE`
