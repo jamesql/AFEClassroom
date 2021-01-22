@@ -1,5 +1,4 @@
 # AFEClassroom ![build](https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat)
-============================
 > Open source virtual classroom software written for AFE response.
 
 ## Project Purpose
