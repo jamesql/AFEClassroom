@@ -12,7 +12,7 @@ const app = express();
 app
 
     .use(session({
-        name: "octogonl",
+        name: "AFEClassroom",
         secret: config.web.cookieSecret,
         cookie: {
             maxAge: 8.64e7,
