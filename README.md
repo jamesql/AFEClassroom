@@ -5,14 +5,13 @@ Open source virtual classroom software written for AFE response.
 AFEClassroom is a open source virtual classroom project to respond to a AFE prompt.
 
 ## File Structure
-    .
-    ├── build                   # Compiled files (alternatively `dist`)
-    ├── docs                    # Documentation files (alternatively `doc`)
-    ├── src                     # Source files (alternatively `lib` or `app`)
-    ├── test                    # Automated tests (alternatively `spec` or `tests`)
-    ├── tools                   # Tools and utilities
-    ├── LICENSE
-    └── README.md
+    ./src
+    ├── config                  # Configuaration Files
+    ├── DB                      # TypeScript Database Interface
+    ├── util                    # Utility scripts & functions
+    ├── WEB                     # Express Server and Front-End
+    ├── WS                      # Web Sockets
+    └── Launch.ts
 
 ## TODO - Roadmap
 - [ ] Front End Design
