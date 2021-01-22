@@ -21,3 +21,4 @@ AFEClassroom is a open source virtual classroom project to respond to a AFE prom
 - [ ] School Anouncements 
 - [ ] Chrome Reminder Extension
 - [ ] Add Redis
+- [ ] Assemblys
