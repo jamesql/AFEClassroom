@@ -2,7 +2,13 @@
 
 <%- include('./templates/header.ejs') %>
 <body>
-<div class="container">
+<div class="container" id="container" style="display: none;">
+
+    <div class="animate__animated animate__fadeInDown">
+      <div class="alert alert-success" role="alert" style="position:relative;transform:translateY(150%);">
+        Pre-Calculus Honors is live in the virtual classroom. <a href="#" class="alert-link">Join now.</a>
+      </div>
+      </div>
 
     <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
     <div class="spinner-border text-success" id="spinner" role="status"> 
@@ -26,5 +32,6 @@ setTimeout(()=>load(), 500);
 function load() {
     document.getElementById('spinner').style.display='none';
     document.getElementById('nav').style='';
+    document.getElementById('container').style='';
 }
 </script>
