@@ -22,7 +22,7 @@ app
         saveUninitialized: true
     }))
     .set("trust proxy", true)
-    .set("views", `${__dirname}/views/templates`)
+    .set("views", `${__dirname}/views`)
     .set("view engine", "ejs")
     .set("view options", { pretty: true })
     .use(express.json())

@@ -1,4 +1,4 @@
 @echo off
 cls
-title Bruh Console v3
+title AFEClassroom Console
 ts-node ./
