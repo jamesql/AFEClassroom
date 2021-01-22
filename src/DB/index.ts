@@ -3,7 +3,8 @@ import {
     User, 
     Class, 
     Assignment, 
-    Announcement } from "./Structures";
+    Announcement,
+    School } from "./Structures";
 import mysql, { Connection, Query } from "mysql";
 
 class Database {
