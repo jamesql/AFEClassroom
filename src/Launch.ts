@@ -6,7 +6,5 @@ export default class OctogonlServer
     async launch()
     {
         await start();
-    }
-
-    
+    }  
 };
