@@ -31,6 +31,7 @@ AFEClassroom is a open source virtual classroom project to respond to a AFE prom
 - [ ] Chrome Reminder Extension
 - [ ] Add Redis
 - [ ] Assemblys
+- [ ] Add scaling for multiple schools
 
 ### LICENSE
 > This project is currently using an MIT License. For more information please read `LICENSE`
