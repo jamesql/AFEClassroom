@@ -1,3 +1,4 @@
+export { Class };
 export default class Class {
 
     constructor(data: any) {

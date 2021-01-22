@@ -1,3 +1,4 @@
+export { Announcement };
 export default class Announcement {
 
     constructor(data: any) {

@@ -1,4 +1,9 @@
 /// <refrence path="../util/@types/global.d.ts" />
+import { 
+    User, 
+    Class, 
+    Assignment, 
+    Announcement } from "./Structures";
 import mysql, { Connection, Query } from "mysql";
 
 class Database {

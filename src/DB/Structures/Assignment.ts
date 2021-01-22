@@ -1,3 +1,4 @@
+export { Assignment };
 export default class Assignment {
 
     constructor(data: any) {
