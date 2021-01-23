@@ -4,7 +4,8 @@ import {
     Class, 
     Assignment, 
     Announcement,
-    School } from "./Structures";
+    School,
+    Work } from "./Structures";
 import mysql, { Connection, Query } from "mysql";
 
 class Database {

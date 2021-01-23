@@ -3,3 +3,4 @@ export * from "./Announcement";
 export * from "./Assignment";
 export * from "./Class";
 export * from "./School";
+export * from "./Work";
