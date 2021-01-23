@@ -40,7 +40,32 @@ class Database {
         });
     }
 
-    
+    async getUserByName(un: string) : Promise<User>
+    {
+        const r = await this.execute("SELECT * from users WHERE username=?", [un]);
+        const d = r[0];
+
+        if (!d) return null;
+
+        return new User(d);
+    }
+
+    async getUserById(id: string) : Promise<User>
+    {
+        const r = await this.execute("SELECT * from users WHERE id=?", [id]);
+        const d = r[0];
+
+        if (!d) return null;
+
+        return new User(d);
+    }
+
+    async createUser(username: string, password: string) : Promise<User>
+    {
+        return null;
+    }
+
+
 
 }
 
