@@ -71,9 +71,7 @@ class Database {
 
         return new User(d);
     }
-
-
-
+    
 }
 
 export default Database;
