@@ -8,6 +8,7 @@ import {
     Work } from "./Structures";
 import mysql, { Connection, Query } from "mysql";
 import config from "../config";
+import Snowflake from "../util/Snowflake";
 
 class Database {
     static db: Connection;
@@ -62,7 +63,13 @@ class Database {
 
     async createUser(username: string, password: string) : Promise<User>
     {
-        return null;
+        const sf = Snowflake.generate();
+        const r = this.execute("INSERT INTO users (id,username,password) VALUES(?,?,?)", [sf,username,password]);
+        const d = r[0];
+
+        if (!d) return null;
+
+        return new User(d);
     }
 
 
