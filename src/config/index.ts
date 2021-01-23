@@ -20,6 +20,14 @@ const config = {
 		regex: /[0-9]{15,21}/,
 		machineId: 0
 	},
+	database: {
+		host: "127.0.0.1",
+		db: "afe",
+		auth: {
+			user: "afe",
+			password: "password"
+		}
+	}
 
 };
 
