@@ -2,3 +2,4 @@
 cls
 title AFEClassroom Console
 ts-node ./
+pause
