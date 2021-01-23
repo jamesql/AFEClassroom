@@ -32,6 +32,10 @@ app
         } else {
             return res.send(r);
         }
+    })
+    .post("/logout", async(req,res) => {
+        req.data.user = null;
+        res.redirect("/");
     });
 
 export default app;
