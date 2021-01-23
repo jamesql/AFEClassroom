@@ -9,4 +9,8 @@ export default class Class {
 
     }
 
+    getById(id: string) {
+        
+    }
+
 }
