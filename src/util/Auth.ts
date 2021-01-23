@@ -8,12 +8,14 @@ interface AuthResponse {
     authed: boolean;
     failReason?: string;
     code?: number;
+    user?: User;
 }
 
 interface RegisterResponse {
     success: boolean;
     failReason?: string;
     code?: number;
+    user?: User;
 }
 
 class Authenticate {
@@ -22,7 +24,7 @@ class Authenticate {
     async authLogin(un:string, pwd: string) : Promise<AuthResponse> {
         const u = await this.db.getUserByName(un);
         const a = await c.compare(pwd, u.password);
-        if (a) return <AuthResponse>{authed:true};
+        if (a) return <AuthResponse>{authed:true,user:u};
             else return <AuthResponse>{authed:false, failReason:"Incorrect Username/Password."};
     }
 
@@ -35,7 +37,7 @@ class Authenticate {
 
         if (!r) return <RegisterResponse>{success:false,failReason:"An error occured while creating your account."};
 
-        return <RegisterResponse>{success:true};
+        return <RegisterResponse>{success:true,user:r};
     }
 
 }

@@ -13,9 +13,24 @@ app
         const r = await a.authLogin(d.username, d.password);
 
         if (r.authed) {
-            
+                 req.data.user = r.user;
+                 return res.send(r);
         } else {
-            
+            return res.send(r);
+        }
+    })
+    .post("/register", async(req,res) => {
+        const d = req.body;
+
+        if (!d || !d.username || !d.password) return res.send({code: 400});
+
+        const r = await a.authRegister(d.username, d.password);
+
+        if (r.success) {
+            req.data.user = r.user;
+            return res.send(r);
+        } else {
+            return res.send(r);
         }
     });
 

@@ -12,7 +12,7 @@
     "@types/bcrypt": "^3.0.0",
     "@types/cookie": "^0.4.0",
     "@types/express": "^4.17.7",
-    "@types/express-session": "^1.17.0",
+    "@types/express-session": "^1.17.3",
     "@types/mysql": "^2.15.17",
     "@types/node": "^14.0.23",
     "@types/ws": "^7.4.0",
