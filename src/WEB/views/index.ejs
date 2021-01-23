@@ -2,6 +2,13 @@
 
 <%- include('./templates/header.ejs') %>
 <body>
+
+    <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center" id="spinner-box">
+        <div class="spinner-border text-success" id="spinner" role="status"> 
+            <span class="sr-only">‎‏‏‎ ‎</span> 
+        </div>
+    </div>
+
 <div class="container" id="container" style="display: none;">
 
     <div class="animate__animated animate__fadeInDown">
@@ -10,16 +17,11 @@
       </div>
       </div>
 
-    <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center" id="spinner-box">
-    <div class="spinner-border text-success" id="spinner" role="status"> 
-        <span class="sr-only">‎‏‏‎ ‎</span> 
-    </div>
-</div>
+<div class="row">
+<div class="animate__animated animate__fadeInUp">
+<div id="school-announcements">
 
-<div class="animate__animated animate__fadeInDown">
-<div id="school-announcements" style="position:relative;transform:translateY(70%);">
-
-    <div class="rounded-lg card justify-content-center align-items-center">
+    <div class="rounded-lg card justify-content-center align-items-center" style="position:relative;margin-top:8%;">
         <div class="card-header background-image" style="background-color:black;">
             </div>
             <img class="front-profile-picture" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Round_Landmark_School_Icon_-_Transparent.svg/512px-Round_Landmark_School_Icon_-_Transparent.svg.png">
@@ -30,13 +32,61 @@
 
     </div>
     </div>
+</div>
 
-<div id="classes">
-    </div>
+<div class="animate__animated animate__fadeInUp">
+    <div class="animate__animated animate__fadeInUp">
 
+<div class="container" id="classes" style="margin-top:8%">
+
+  <div class="card justify-content-center align-items-center" style="border:0;">
+    <div class="row">
+        <div class="col md-lg">
+            <div class="card" style="width: 18rem;margin-bottom:15px;">
+                <div class="card-body">
+                  <h5 class="card-title">Pre-Calculus Honors</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">PETER GRIFFIN</h6>
+                  <p class="card-text"></p>
+                  <a href="#" class="card-link">Classroom</a>
+                  <a href="#" class="card-link">View Assignments</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col md-lg">
+                <div class="card" style="width: 18rem;margin-bottom:15px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Pre-Calculus Honors</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">PETER GRIFFIN</h6>
+                      <p class="card-text"></p>
+                      <a href="#" class="card-link">Classroom</a>
+                      <a href="#" class="card-link">View Assignments</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col md-lg">
+                    <div class="card" style="width: 18rem;margin-bottom:15px;">
+                        <div class="card-body">
+                          <h5 class="card-title">Pre-Calculus Honors</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">PETER GRIFFIN</h6>
+                          <p class="card-text"></p>
+                          <a href="#" class="card-link">Classroom</a>
+                          <a href="#" class="card-link">View Assignments</a>
+                        </div>
+                      </div>
+                    </div>
+
+            </div>
+        </div>
 
 </div>
+</div>
+    
+    </div>
+
 </body>
+
 
 <script>
 setTimeout(()=>load(), 500);
