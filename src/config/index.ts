@@ -13,7 +13,13 @@ const config = {
 		serverOptions: {
 		} as https.ServerOptions,
 		cookieSecret: "ZTXTfjbMVdqWryvaJz9s9mT2Q3zbxAUeUGU7mwMX"
-	}
+	},
+	snowflake: {
+		dilimiter: "$",
+		epoch: 1593561600000,
+		regex: /[0-9]{15,21}/,
+		machineId: 0
+	},
 
 };
 
