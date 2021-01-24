@@ -5,7 +5,7 @@ const app = express.Router();
 
 app
     .get("/", async (req,res) => {
-        await checkAuth(req,res);
+        if(!req.user) return res.redirect("/app/login");
         res.render("index");
     })
     .get("/login", async(req,res) => {
@@ -32,7 +32,5 @@ app
     .get("/material", async(req,res) => {
         
     });
-
-    function checkAuth(req: express.Request, res: express.Response) { if(!req.user) return res.redirect("/app/login"); }
 
 export default app;
