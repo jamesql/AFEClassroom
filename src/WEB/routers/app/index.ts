@@ -9,11 +9,11 @@ app
         res.render("index");
     })
     .get("/login", async(req,res) => {
-        if(!req.user) return res.render("/pages/login");
+        if(!req.user) return res.render("pages/login");
             else return res.redirect("/app");
     })
     .get("/register", async(req,res) => {
-        if(!req.user) return res.render("/pages/register");
+        if(!req.user) return res.render("pages/register");
             else return res.redirect("/app");
     })
     .get("/logout", async(req,res) => {
