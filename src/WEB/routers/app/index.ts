@@ -22,6 +22,15 @@ app
     })
     .get("/classroom", async(req,res) => {
         
+    })
+    .get("/class-grades", async(req,res) => {
+        
+    })
+    .get("/assignment", async(req,res) => {
+        
+    })
+    .get("/material", async(req,res) => {
+        
     });
 
     function checkAuth(req: express.Request, res: express.Response) { if(!req.user) return res.redirect("/app/login"); }
