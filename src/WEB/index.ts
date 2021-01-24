@@ -6,8 +6,6 @@ import session from "express-session";
 import http from "http";
 import https from "https";
 import config from "../config";
-import passport from "passport";
-import cookieParser from "cookie-parser";
 import { colors as leeks } from "leeks.js";
 
 const app = express();
@@ -23,7 +21,6 @@ morgan
 	});
 
 app
-    .use(cookieParser())
     .use(session({
         name: "AFEClassroom",
         secret: config.web.cookieSecret,
@@ -33,8 +30,6 @@ app
         resave: false,
         saveUninitialized: true
     }))
-    .use(passport.initialize())
-    .use(passport.session())
     .set("trust proxy", true)
     .set("views", `${__dirname}/views`)
     .set("view engine", "ejs")
