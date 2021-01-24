@@ -23,6 +23,7 @@ class Authenticate {
 
     async authLogin(un:string, pwd: string) : Promise<AuthResponse> {
         const u = await this.db.getUserByName(un);
+        if (!u) return <AuthResponse>{authed:false, failReason:"User does not exist."};
         const a = await c.compare(pwd, u.password);
         if (a) return <AuthResponse>{authed:true,user:u};
             else return <AuthResponse>{authed:false, failReason:"Incorrect Username/Password."};

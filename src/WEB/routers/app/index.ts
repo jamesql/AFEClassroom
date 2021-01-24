@@ -1,10 +1,12 @@
 /// <refrence path="../../util/@types/global.d.ts" />
 import express from "express";
+import passport from "passport";
 
 const app = express.Router();
 
 app
-    .get("/", async (req,res) => {
+    .get("/", async (req: express.Request, res) => {
+        console.log(req);
         if(!req.user) return res.redirect("/app/login");
         res.render("index");
     })

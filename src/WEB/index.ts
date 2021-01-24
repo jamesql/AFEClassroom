@@ -6,21 +6,24 @@ import session from "express-session";
 import http from "http";
 import https from "https";
 import config from "../config";
+import passport from "passport";
+import cookieParser from "cookie-parser";
 
 const app = express();
 
 app
-
+    .use(cookieParser())
     .use(session({
         name: "AFEClassroom",
         secret: config.web.cookieSecret,
         cookie: {
             maxAge: 8.64e7,
-            secure: true
         },
         resave: false,
         saveUninitialized: true
     }))
+    .use(passport.initialize())
+    .use(passport.session())
     .set("trust proxy", true)
     .set("views", `${__dirname}/views`)
     .set("view engine", "ejs")

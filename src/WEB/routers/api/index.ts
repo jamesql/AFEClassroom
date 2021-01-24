@@ -6,8 +6,11 @@ import { Authenticate } from "../../../util/Auth"
 const app = express.Router();
 const a = new Authenticate();
 
+// fix req.user need to fix sessions
+
 app
     .post("/login", async (req,res) => {
+        console.log(req);
         const d = req.body;
         if (!d || !d.username || !d.password) return res.send({code: 400});
 
@@ -15,6 +18,7 @@ app
 
         if (r.authed) {
                  req.user = r.user;
+                 console.log(req.user);
                  return res.send(r);
         } else {
             return res.send(r);

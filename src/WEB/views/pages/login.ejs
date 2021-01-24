@@ -4,6 +4,8 @@
 
 <%- include('../templates/spinner.ejs') %>
 
+<script src="/scripts/auth.js"></script>
+
 <div class="container" id="container">
 
     <div class="animate__animated animate__fadeInUp">
@@ -13,7 +15,7 @@
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" style="margin-bottom: 8%;">
                 <input type="password" class="form-control" id="password" aria-describedby="passwordHelp" placeholder="Password" style="margin-bottom: 8%;">
 
-                <button type="submit" id="loginButton" class="btn btn-primary" style="width: 500px;">Login</button>
+                <button type="submit" onclick="login()" id="loginButton" class="btn btn-primary" style="width: 500px;">Login</button>
 
             </div>
         </div>
