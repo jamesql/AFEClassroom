@@ -2,23 +2,28 @@
 
 import express from "express";
 import { Authenticate } from "../../../util/Auth"
+import { User } from "../../../DB/Structures";
 
 const app = express.Router();
 const a = new Authenticate();
 
-// fix req.user need to fix sessions
+// temp fix
+declare module 'express-session' {
+    interface SessionData {
+      user: User;
+    }
+  }
 
 app
     .post("/login", async (req,res) => {
-        console.log(req);
         const d = req.body;
         if (!d || !d.username || !d.password) return res.send({code: 400});
-
+        
         const r = await a.authLogin(d.username, d.password);
 
         if (r.authed) {
-                 req.user = r.user;
-                 console.log(req.user);
+                 req.session.user = r.user;
+                 console.log("n:\n" + req.session);
                  return res.send(r);
         } else {
             return res.send(r);
@@ -31,14 +36,14 @@ app
         const r = await a.authRegister(d.username, d.password);
 
         if (r.success) {
-            req.user = r.user;
+            req.session.user = r.user;
             return res.send(r);
         } else {
             return res.send(r);
         }
     })
     .post("/logout", async(req,res) => {
-        req.user = null;
+        req.session.user = null;
         res.redirect("/");
     });
 
