@@ -1,5 +1,5 @@
 /// <refrence path="../../util/@types/global.d.ts" />
-/// <refrence path="../../../util/@types/Express.d.ts" />
+
 import express from "express";
 import { Authenticate } from "../../../util/Auth"
 
