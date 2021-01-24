@@ -15,6 +15,7 @@
     "@types/express-session": "^1.17.3",
     "@types/mysql": "^2.15.17",
     "@types/node": "^14.0.23",
+    "@types/passport": "^1.0.5",
     "@types/ws": "^7.4.0",
     "bcrypt": "^5.0.0",
     "cookie": "^0.4.1",
@@ -23,6 +24,7 @@
     "express-session": "^1.17.1",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
+    "passport": "^0.4.1",
     "ts-node": "^8.10.2",
     "ws": "^7.4.2"
   }

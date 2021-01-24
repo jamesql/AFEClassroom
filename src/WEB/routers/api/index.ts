@@ -1,4 +1,5 @@
 /// <refrence path="../../util/@types/global.d.ts" />
+/// <refrence path="../../../util/@types/Express.d.ts" />
 import express from "express";
 import { Authenticate } from "../../../util/Auth"
 
@@ -13,7 +14,7 @@ app
         const r = await a.authLogin(d.username, d.password);
 
         if (r.authed) {
-                 req.data.user = r.user;
+                 req.user = r.user;
                  return res.send(r);
         } else {
             return res.send(r);
@@ -27,14 +28,14 @@ app
         const r = await a.authRegister(d.username, d.password);
 
         if (r.success) {
-            req.data.user = r.user;
+            req.user = r.user;
             return res.send(r);
         } else {
             return res.send(r);
         }
     })
     .post("/logout", async(req,res) => {
-        req.data.user = null;
+        req.user = null;
         res.redirect("/");
     });
 

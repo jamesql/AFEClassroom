@@ -12,7 +12,8 @@
     "module": "commonjs",
     "typeRoots": [
       "./node_modules/@types",
-      "./src/util/@types"
+      "src/util/@types",
+      "@types"
     ],
     "jsx": "react",
     "lib": [
@@ -20,6 +21,15 @@
       "dom.iterable",
       "esnext"
     ],
+    "paths": {
+      "@types/*": [
+          "src/util/@types/*"
+      ],
+      "types/*": [
+          "src/util/@types/*"
+      ],
+       "@src/*": ["src/*"]
+    },
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,

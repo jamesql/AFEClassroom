@@ -5,11 +5,11 @@ const app = express.Router();
 
 app
     .get("/", async (req,res) => {
-        if (!req.data.user) return res.redirect("/app/login");
+        if (!req.user) return res.redirect("/app/login");
         res.render("index");
     })
     .get("/login", async(req,res) => {
-
+        res.send("login page");
     })
     .get("/register", async(req,res) => {
         
