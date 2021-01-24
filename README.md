@@ -1,8 +1,8 @@
 # AFEClassroom ![build](https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat)
-> Open source virtual classroom software written for AFE response.
+> Open source virtual classroom software.
 
 ## Project Purpose
-AFEClassroom is a open source virtual classroom project to respond to a AFE prompt.
+AFEClassroom is a open source virtual classroom project to respond to a AFE prompt and is a open-source alternative to Google Classroom.
 
 ## File Structure
     ./src
