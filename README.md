@@ -14,10 +14,10 @@ AFEClassroom is a open source virtual classroom project to respond to a AFE prom
     └── Launch.ts
 
 ## TODO - Roadmap
-- [ ] Front End Design
-- [ ] Logo
-- [ ] Database Structure
-- [ ] Login / Authentication
+- [+] Front End Design
+- [+] Logo
+- [+] Database Structure
+- [+] Login / Authentication
 - [ ] Basic Assign Class Schedule System
 - [ ] Grading System
 - [ ] Video/Audio
