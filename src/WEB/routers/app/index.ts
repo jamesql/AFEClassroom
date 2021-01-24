@@ -9,10 +9,12 @@ app
         res.render("index");
     })
     .get("/login", async(req,res) => {
-        res.send("login page");
+        if(!req.user) return res.render("/pages/login");
+            else return res.redirect("/app");
     })
     .get("/register", async(req,res) => {
-        
+        if(!req.user) return res.render("/pages/register");
+            else return res.redirect("/app");
     })
     .get("/logout", async(req,res) => {
         
