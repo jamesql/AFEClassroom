@@ -8,8 +8,19 @@ import https from "https";
 import config from "../config";
 import passport from "passport";
 import cookieParser from "cookie-parser";
+import { colors as leeks } from "leeks.js";
 
 const app = express();
+
+morgan
+	.token("domain", (req: express.Request, res: express.Response, arg) => req.hostname)
+	.token("status-c", (req, res, arg) => {
+		if (res.statusCode >= 200 && res.statusCode <= 299) return leeks.green(res.statusCode.toString());
+		else if (res.statusCode >= 300 && res.statusCode <= 399) return leeks.cyan(res.statusCode.toString());
+		else if (res.statusCode >= 400 && res.statusCode <= 499) return leeks.yellow(res.statusCode.toString());
+		else if (res.statusCode >= 500 && res.statusCode <= 599) return leeks.red(res.statusCode.toString());
+		else return res.statusCode.toString();
+	});
 
 app
     .use(cookieParser())
@@ -30,7 +41,7 @@ app
     .set("view options", { pretty: true })
     .use(express.json())
     .use(express.urlencoded({ extended: false }))
-    .use(morgan("dev"))
+    .use(morgan("[AFEClassroom - :domain] :method :status-c :response-time ms - :res[content-length]"))
     .use(express.static(`${__dirname}/public`))
     .use("/", require("./routers/index").default);
 
@@ -38,7 +49,7 @@ async function start() {
     (config.web.secure ? https : http)
         .createServer(config.web.serverOptions, app)
         .listen(config.web.port, config.web.host, () =>
-            console.log(`Listening on http${config.web.secure ? "s" : ""}://${config.web.host}:${config.web.port}`)
+            console.log(leeks.green(`[AFEClassroom - Startup] HTTP Server Started on ${config.web.port}`))
         );
 }
 
