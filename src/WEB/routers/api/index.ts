@@ -23,7 +23,6 @@ app
 
         if (r.authed) {
                  req.session.user = r.user;
-                 console.log("n:\n" + req.session);
                  return res.send(r);
         } else {
             return res.send(r);
