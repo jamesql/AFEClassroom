@@ -6,16 +6,15 @@ const app = express.Router();
 
 app
     .get("/", async (req: express.Request, res) => {
-        console.log(req);
-        if(!req.user) return res.redirect("/app/login");
+        if(!req.session.user) return res.redirect("/app/login");
         res.render("index");
     })
     .get("/login", async(req,res) => {
-        if(!req.user) return res.render("pages/login");
+        if(!req.session.user) return res.render("pages/login");
             else return res.redirect("/app");
     })
     .get("/register", async(req,res) => {
-        if(!req.user) return res.render("pages/register");
+        if(!req.session.user) return res.render("pages/register");
             else return res.redirect("/app");
     })
     .get("/logout", async(req,res) => {
