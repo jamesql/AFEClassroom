@@ -105,3 +105,6 @@ dist
 
 # Commit Command file
 commit.cmd
+
+# Start Command file
+start.cmd
