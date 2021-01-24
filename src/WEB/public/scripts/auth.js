@@ -8,8 +8,19 @@ function login()
     fetch(`http://${window.location.hostname}/api/login`, {
         method: "POST",
         body: JSON.stringify({
-
-        })
+            username: $("#email").value,
+            password: $("#password").value
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(res=> res.json())
+    .then(res=> {
+        if(!res.authed) sendAlert(res.failReason);
+        else {
+            window.location.href = `http://${window.location.hostname}/app`;
+        }
     });
 }
 
@@ -18,14 +29,25 @@ function register()
     fetch(`http://${window.location.hostname}/api/register`, {
         method: "POST",
         body: JSON.stringify({
-
-        })
+            username: $("#email").value,
+            password: $("#password").value
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(res=> res.json())
+    .then(res=> {
+        if(!res.success) sendAlert(res.failReason);
+        else {
+            window.location.href = `http://${window.location.hostname}/app`;
+        }
     });
 }
 
 function checkValidEmail()
 {
-
+    
 }
 
 function checkValidPassword()
@@ -35,5 +57,5 @@ function checkValidPassword()
 
 function sendAlert(str)
 {
-
+    alert(str);
 }
