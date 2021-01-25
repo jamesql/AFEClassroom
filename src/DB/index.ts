@@ -71,6 +71,26 @@ class Database {
 
         return new User(d);
     }
+
+    async createClass(teacher: string)
+    {
+        const sf = Snowflake.generate();
+    }
+
+    async getUserClasses(username: string) : Promise<Class[]>
+    {
+        return null;
+    }
+
+    async getClassAssignmentsById(id: string) : Promise<Assignment[]>
+    {
+       return null; 
+    }
+
+    async getAssignmentById(id: string) : Promise<Assignment>
+    {
+        return null;
+    }
     
 }
 
