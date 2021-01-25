@@ -30,16 +30,17 @@ function register()
     fetch(`http://${window.location.hostname}/api/register`, {
         method: "POST",
         body: JSON.stringify({
-            username: $("#email").value,
-            password: $("#password").value
+            username: $("#email").val(),
+            password: $("#password").val()
         }),
         headers: {
             "Content-Type": "application/json"
-        }
+        },
+        credentials: "same-origin"
     })
-    .then(res=> res.json())
-    .then(res=> {
-        if(!res.success) sendAlert(res.failReason);
+    .then(async(res)=> {
+        const d = await res.json();
+        if(!d["success"]) sendAlert(d["failReason"]);
         else {
             window.location.href = `http://${window.location.hostname}/app`;
         }
