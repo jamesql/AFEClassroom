@@ -5,4 +5,9 @@ declare global{
         interface Request {
         }
     }
+
+    interface Permission {
+        val: string;
+        num?: number;
+    }
 }

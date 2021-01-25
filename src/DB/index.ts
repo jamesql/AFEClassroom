@@ -91,6 +91,11 @@ class Database {
     {
         return null;
     }
+
+    async setPermissionLevel(id: string, nPrm: Permission) : Promise<User>
+    {
+        return null;
+    }
     
 }
 
