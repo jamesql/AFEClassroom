@@ -1,5 +1,3 @@
-import { ExecFileOptionsWithStringEncoding } from "child_process";
-
 export { Class };
 export default class Class {
     id: string;
