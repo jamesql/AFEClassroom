@@ -64,7 +64,7 @@ class Database {
     async createUser(username: string, password: string, name: string) : Promise<User>
     {
         const sf = Snowflake.generate();
-        const r = this.execute("INSERT INTO users (id,username,name,password) VALUES(?,?,?,?)", [sf,username,name,password]);
+        const r = await this.execute("INSERT INTO users (id,username,name,password) VALUES(?,?,?,?)", [sf,username,name,password]);
         const d = r[0];
 
         if (!d) return null;
@@ -76,6 +76,27 @@ class Database {
     {
         const sf = Snowflake.generate();
         
+    }
+
+    async createAnnouncement(a_id: string, a_name: string, text: string, files?: string) : Promise<Announcement>
+    {
+        if (!files) files="[]";
+        const sf = Snowflake.generate();
+        const r = await this.execute("INSERT INTO announcements (id,a_id,a_name,text,files)", [sf,a_id,a_name,text,files]);
+        const d = r[0];
+
+        if (!d) return null;
+        return new Announcement(d);
+    }
+
+    async createAssignment()
+    {
+
+    }
+
+    async createWork()
+    {
+
     }
 
     async getUserClasses(username: string) : Promise<Class[]>
@@ -93,9 +114,24 @@ class Database {
         return null;
     }
 
+    async getPermissionLevel(id: string) : Promise<string>
+    {
+        const r = await this.execute("SELECT * from users WHERE id=?", [id]);
+        const d = r[0];
+        const u = new User(d);
+        if (!d) return null;
+
+        return u.permission;
+    }
+
     async setPermissionLevel(id: string, nPrm: string) : Promise<User>
     {
         return null;
+    }
+
+    async addFilesToWork()
+    {
+
     }
     
 }
