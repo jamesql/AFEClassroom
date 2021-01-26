@@ -1,6 +1,7 @@
 export { Assignment };
 export default class Assignment {
     id: string;
+    name: string;
     a_id: string;
     a_name: string;
     c_id: string;
@@ -15,6 +16,7 @@ export default class Assignment {
 
     load(data: any) {
         this.id = data.id;
+        this.name = data.name;
         this.a_id = data.a_id;
         this.a_name = data.a_name;
         this.c_id = data.c_id;

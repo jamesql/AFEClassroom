@@ -89,14 +89,22 @@ class Database {
         return new Announcement(d);
     }
 
-    async createAssignment()
+    async createAssignment(name: string, a_id: string, a_name: string, c_id: string, text: string, max_score: number, due_date: string, files?:string)
     {
+        if (!files) files="[]";
+        const sf = Snowflake.generate();
+        const r = await this.execute("", []);
+        const d = r[0];
 
+        if (!d) return null;
+        return new Assignment(d);
     }
 
-    async createWork()
+    async createWork(assignment_id: string, a_id: string, a_name: string, s_name: string)
     {
-
+        const sf = Snowflake.generate();
+        const r = await this.execute("", []);
+        const d = r[0];
     }
 
     async getUserClasses(username: string) : Promise<Class[]>
