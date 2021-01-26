@@ -20,6 +20,8 @@ function login()
         const d = await res.json();
         if(!d["authed"]) sendAlert(d["failReason"]);
         else {
+            const token = d["user"].id;
+            localStorage.setItem("token", token);
             window.location.href = `http://${window.location.hostname}/app`;
         }
     });
@@ -43,6 +45,8 @@ function register()
         const d = await res.json();
         if(!d["success"]) sendAlert(d["failReason"]);
         else {
+            const token = d["user"].id;
+            localStorage.setItem("token", token);
             window.location.href = `http://${window.location.hostname}/app`;
         }
     });
