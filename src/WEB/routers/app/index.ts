@@ -32,7 +32,7 @@ app
         const c = await db.getClassById(c_id);
         if (!c) return res.send("404 - Page not found!");
         const a = await db.getClassAssignmentsById(c_id);
-        res.send(c);
+        res.send([a,c]);
 
     });
 
