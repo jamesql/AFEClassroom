@@ -30,10 +30,10 @@ app
         const u_c = await db.getUserClasses(user.id);
         const c_id = req.params.id;
         const c = await db.getClassById(c_id);
+        if(!u_c.includes(c)) return res.send("You are not in this class!");
         if (!c) return res.send("404 - Page not found!");
         const a = await db.getClassAssignmentsById(c_id);
         res.send([a,c]);
-
     });
 
 export default app;
