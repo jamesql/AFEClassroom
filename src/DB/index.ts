@@ -72,9 +72,10 @@ class Database {
         return new User(d);
     }
 
-    async createClass(teacher: string)
+    async createClass(t_id: string)
     {
         const sf = Snowflake.generate();
+        
     }
 
     async getUserClasses(username: string) : Promise<Class[]>
