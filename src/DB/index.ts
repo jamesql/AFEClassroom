@@ -107,7 +107,26 @@ class Database {
         const d = r[0];
     }
 
-    async getUserClasses(username: string) : Promise<Class[]>
+    async getClassById(id: string) : Promise<Class>
+    {
+        const r = await this.execute("SELECT * from classes WHERE id=?", [id]);
+        const d = r[0];
+
+        if (!d) return null;
+        return new Class(d);
+    }
+
+    async getUserClasses(id: string) : Promise<Class[]>
+    {
+        const r = await this.execute("SELECT classes FROM users WHERE id=?", [id]);
+        const d = r[0];
+        const c = JSON.parse(d.classes);
+        let z: Array<Class>;
+        await c.map(async(x)=>z.push(await this.getClassById(x)));
+        return z;
+    }
+
+    async getAssignmentById(id: string) : Promise<Assignment>
     {
         return null;
     }
@@ -115,11 +134,6 @@ class Database {
     async getClassAssignmentsById(id: string) : Promise<Assignment[]>
     {
        return null; 
-    }
-
-    async getAssignmentById(id: string) : Promise<Assignment>
-    {
-        return null;
     }
 
     async getPermissionLevel(id: string) : Promise<string>
