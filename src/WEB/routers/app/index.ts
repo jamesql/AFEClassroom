@@ -27,11 +27,12 @@ app
     .get("/classroom/:id", async(req,res) => {
         const user = req.session.user;
         if (!user) return res.redirect("/app/login");
+        const u_c = await db.getUserClasses(user.id);
         const c_id = req.params.id;
         const c = await db.getClassById(c_id);
         if (!c) return res.send("404 - Page not found!");
         const a = await db.getClassAssignmentsById(c_id);
-        res.send(a);
+        res.send(c);
 
     });
 
