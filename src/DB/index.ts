@@ -126,14 +126,13 @@ class Database {
         return z;
     }
 
-    async getAssignmentById(id: string) : Promise<Assignment>
-    {
-        return null;
-    }
-
     async getClassAssignmentsById(id: string) : Promise<Assignment[]>
     {
-       return null; 
+        const r = await this.execute("SELECT * FROM assignments WHERE c_id=?", [id]);
+        let i = 0, d: Assignment[] = [];
+        while(r[i]) d[i]=new Assignment(r[i++]);
+        
+        return d;
     }
 
     async getPermissionLevel(id: string) : Promise<string>
