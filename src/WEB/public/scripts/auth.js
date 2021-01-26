@@ -31,7 +31,8 @@ function register()
         method: "POST",
         body: JSON.stringify({
             username: $("#email").val(),
-            password: $("#password").val()
+            password: $("#password").val(),
+            name: $("#name").val()
         }),
         headers: {
             "Content-Type": "application/json"

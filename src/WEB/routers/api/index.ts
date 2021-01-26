@@ -30,9 +30,9 @@ app
     })
     .post("/register", async(req,res) => {
         const d = req.body;
-        if (!d || !d.username || !d.password) return res.send({code: 400});
+        if (!d || !d.username || !d.password || !d.name) return res.send({code: 400});
 
-        const r = await a.authRegister(d.username, d.password);
+        const r = await a.authRegister(d.username, d.password, d.name);
 
         if (r.success) {
             req.session.user = r.user;

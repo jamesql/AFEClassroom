@@ -4,6 +4,8 @@
 
 <%- include('../templates/spinner.ejs') %>
 
+<script src="/scripts/auth.js"></script>
+
 <div class="container" id="container">
 
     <div class="animate__animated animate__fadeInUp">
@@ -11,9 +13,10 @@
         <div class="card-body">
             <row><img src="/logo.png">Register AFE Account</row>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" style="margin-bottom: 8%;">
+                <input type="username" class="form-control" id="name" aria-describedby="usernameHelp" placeholder="Full Name" style="margin-bottom: 8%;">
                 <input type="password" class="form-control" id="password" aria-describedby="passwordHelp" placeholder="Password" style="margin-bottom: 8%;">
 
-                <button type="submit" id="registerButton" class="btn btn-primary" style="width: 500px;">Register</button>
+                <button onClick="register()" type="submit" id="registerButton" class="btn btn-primary" style="width: 500px;">Register</button>
 
             </div>
         </div>

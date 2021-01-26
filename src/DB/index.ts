@@ -61,10 +61,10 @@ class Database {
         return new User(d);
     }
 
-    async createUser(username: string, password: string) : Promise<User>
+    async createUser(username: string, password: string, name: string) : Promise<User>
     {
         const sf = Snowflake.generate();
-        const r = this.execute("INSERT INTO users (id,username,password) VALUES(?,?,?)", [sf,username,password]);
+        const r = this.execute("INSERT INTO users (id,username,name,password) VALUES(?,?,?,?)", [sf,username,name,password]);
         const d = r[0];
 
         if (!d) return null;
@@ -93,7 +93,7 @@ class Database {
         return null;
     }
 
-    async setPermissionLevel(id: string, nPrm: Permission) : Promise<User>
+    async setPermissionLevel(id: string, nPrm: string) : Promise<User>
     {
         return null;
     }
