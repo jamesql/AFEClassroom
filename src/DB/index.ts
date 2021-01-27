@@ -121,8 +121,8 @@ class Database {
         const r = await this.execute("SELECT classes FROM users WHERE id=?", [id]);
         const d = r[0];
         const c = JSON.parse(d.classes);
-        let z: Class[] = [];
-        await c.map(async(x)=>z.push(await this.getClassById(x)));
+        let i = 0, z: Class[] = [];
+        while(c[i]) z[i]=await this.getClassById(c[i++]);
         return z;
     }
 

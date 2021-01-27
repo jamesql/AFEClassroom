@@ -5,7 +5,6 @@
 
 <%- include('../templates/spinner.ejs') %>
 
-
 <div class="container" id="container" style="display: none;">
 
     <div class="animate__animated animate__fadeInDown">
@@ -39,7 +38,7 @@
   <div class="card justify-content-center align-items-center" style="border:0;">
 
     <% let c_c = 0; %>
-    <% while(classes[c_c++]) { %>
+    <% while(classes[c_c]) { %>
         <% if (c_c === 0) { %>
             <div class="row">
             <% } %>
@@ -51,15 +50,16 @@
             <div class="col md-lg">
                 <div class="rounded-lg card" style="width: 18rem;margin-bottom:15px;">
                     <div class="card-body">
-                      <h5 class="card-title"><%= clases[c_c].name %></h5>
-                      <h6 class="card-subtitle mb-2 text-muted"><%= clases[c_c].t_name %></h6>
-                      <p class="card-text"><%= clases[c_c].description %></p>
+                      <h5 class="card-title"><%= classes[c_c].name %></h5>
+                      <h6 class="card-subtitle mb-2 text-muted"><%= classes[c_c].t_name %></h6>
+                      <p class="card-text"><%= classes[c_c].description %></p>
                       <a href="#" class="card-link">Classroom</a>
-                      <a href="<%= clases[c_c].id %>" class="card-link">View Assignments</a>
+                      <a href="/app/classroom/<%= classes[c_c].id %>" class="card-link">View Assignments</a>
                     </div>
                   </div>
                 </div>
-        <% } %>
+            
+        <% c_c++; } %>
 
         </div>
 
