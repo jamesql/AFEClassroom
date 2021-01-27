@@ -38,45 +38,29 @@
 
   <div class="card justify-content-center align-items-center" style="border:0;">
 
-    
-    <div class="row">
-        <div class="col md-lg">
-            <div class="rounded-lg card" style="width: 18rem;margin-bottom:15px;">
-                <div class="card-body">
-                  <h5 class="card-title">Pre-Calculus Honors</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">PETER GRIFFIN</h6>
-                  <p class="card-text"></p>
-                  <a href="#" class="card-link">Classroom</a>
-                  <a href="#" class="card-link">View Assignments</a>
-                </div>
-              </div>
+    <% let c_c = 0; %>
+    <% while(classes[c_c++]) { %>
+        <% if (c_c === 0) { %>
+            <div class="row">
+            <% } %>
+        
+        <% if (c_c % 3 === 0) { %>
             </div>
-
+            <div class="row">
+            <% } %>
             <div class="col md-lg">
                 <div class="rounded-lg card" style="width: 18rem;margin-bottom:15px;">
                     <div class="card-body">
-                      <h5 class="card-title">Pre-Calculus Honors</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">PETER GRIFFIN</h6>
-                      <p class="card-text"></p>
+                      <h5 class="card-title"><%= clases[c_c].name %></h5>
+                      <h6 class="card-subtitle mb-2 text-muted"><%= clases[c_c].t_name %></h6>
+                      <p class="card-text"><%= clases[c_c].description %></p>
                       <a href="#" class="card-link">Classroom</a>
-                      <a href="#" class="card-link">View Assignments</a>
+                      <a href="<%= clases[c_c].id %>" class="card-link">View Assignments</a>
                     </div>
                   </div>
                 </div>
+        <% } %>
 
-                <div class="col md-lg">
-                    <div class="rounded-lg card" style="width: 18rem;margin-bottom:15px;">
-                        <div class="card-body">
-                          <h5 class="card-title">Pre-Calculus Honors</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">PETER GRIFFIN</h6>
-                          <p class="card-text"></p>
-                          <a href="#" class="card-link">Classroom</a>
-                          <a href="#" class="card-link">View Assignments</a>
-                        </div>
-                      </div>
-                    </div>
-
-            </div>
         </div>
 
 </div>
