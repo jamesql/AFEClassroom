@@ -8,7 +8,8 @@ const db = new Database();
 app
     .get("/", async (req: express.Request, res) => {
         if(!req.session.user) return res.redirect("/app/login");
-        res.render("index");
+        const cs = await db.getUserClasses(req.session.user.id);
+        res.render("pages/app", {classes: cs});
     })
     .get("/login", async(req,res) => {
         if(!req.session.user) return res.render("pages/login");
@@ -30,10 +31,11 @@ app
         const u_c = await db.getUserClasses(user.id);
         const c_id = req.params.id;
         const c = await db.getClassById(c_id);
-        if(!u_c.includes(c)) return res.send("You are not in this class!");
+        if(u_c.findIndex(i=>i.id===c.id) === -1) return res.send("You are not in this class!");
         if (!c) return res.send("404 - Page not found!");
         const a = await db.getClassAssignmentsById(c_id);
-        res.send([a,c]);
+        if (user.permission === "teacher") res.render("pages/teacher", []);
+            else res.send([a,c]);
     });
 
 export default app;
