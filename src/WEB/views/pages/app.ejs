@@ -39,7 +39,7 @@
 
 <div class="container" id="classes" style="margin-top:8%">
 
-  <div class="card justify-content-center align-items-center" style="border:0;">
+  <div class="card justify-content-center" style="border:0;">
 
     <% let c_c = 0; %>
     <% while(classes[c_c]) { %>
@@ -47,12 +47,12 @@
             <div class="row">
             <% } %>
         
-        <% if (c_c % 3 === 0) { %>
+        <% if (c_c % 3 === 0 && c_c !== 0) { %>
             </div>
             <div class="row">
             <% } %>
             <div class="col md-lg">
-                <div class="rounded-lg card" style="width: 18rem;margin-bottom:15px;">
+                <div class="rounded-lg card" style="width: 18rem;margin-bottom:20px;">
                     <div class="card-body">
                       <h5 class="card-title"><%= classes[c_c].name %></h5>
                       <h6 class="card-subtitle mb-2 text-muted"><%= classes[c_c].t_name %></h6>
