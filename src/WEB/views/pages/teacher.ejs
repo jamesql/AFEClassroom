@@ -9,29 +9,36 @@
 
 <%- include('../templates/spinner.ejs') %>
 
-<div class="container" id="container">
+<div class="container" id="container" style="display: none;">
 
-    <div class="animate__animated animate__fadeInUp">
-        <div class="rounded-lg card justify-content-center" style="position:relative;margin-top:15%;">
-            <div class="card-body">
+    <div class="animate__animated animate__fadeInUp" style="position:relative;margin-top:15%;">
+        <button type="button" class="btn btn-success" style="margin-bottom: 5px;">+</button>
     <div class="row">
-        <div class="col-4">
+        <div class="col-4" style="max-width: 200px;">
           <div class="list-group" id="list-tab" role="tablist" style="max-height: 500px;max-width:200px;overflow: scroll;">
-            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-hw1" role="tab" aria-controls="home">Homework 3</a>
+            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-hw2" role="tab" aria-controls="profile">Project 1</a>
+            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-hw2" role="tab" aria-controls="messages">Homework 2</a>
+            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-hw2" role="tab" aria-controls="settings">Homework 1</a>
         </div>
         </div>
         <div class="col-8">
           <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+
+                <div class="rounded-lg card justify-content-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Homework 3</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Work</h6>
+                        <p class="card-text">Assignment Description</p>
+                        </div>
+                        </div>
+
+            </div>
             <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
             <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
             <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
           </div>
-        </div>
-      </div>
     </div>
 </div>
 </div>
