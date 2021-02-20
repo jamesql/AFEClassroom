@@ -38,6 +38,7 @@ app
 
         if (r.success) {
             req.session.user = r.user;
+            console.log(`[AFEClassroom - API Auth] Created user ${r.user.id} (${r.user.name})`);
             return res.send(r);
         } else {
             return res.send(r);
