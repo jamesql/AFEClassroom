@@ -9,7 +9,10 @@ import cfg from "../../../config"
 export default async function StartWSS(server: http.Server) : Promise<AFECWS.AFECServer> {
     const ws = new WebSocket.Server({ server }) as AFECWS.AFECServer;
 
-    
+    // heartbeat
+    setInterval(() => {
+        
+    }, 1e3)
 
     return ws;
 };
