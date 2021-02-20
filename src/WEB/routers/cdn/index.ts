@@ -19,6 +19,9 @@ app
     })
     .post("/announcement-upload", async(req,res) => {
 
+    })
+    .get("/file/:fileid", async(req,res) => {
+        
     });
 
 export default app;
