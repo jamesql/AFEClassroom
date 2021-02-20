@@ -11,7 +11,12 @@ export default async function StartWSS(server: http.Server) : Promise<AFECWS.AFE
 
     // heartbeat
     setInterval(() => {
+       const d = Date.now();
         
+       const a = Array.from(ws.clients);
+       for (const c of a) {
+           
+       }
     }, 1e3)
 
     return ws;
