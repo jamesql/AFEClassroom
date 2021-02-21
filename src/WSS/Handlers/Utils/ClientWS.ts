@@ -1,7 +1,8 @@
+/// <reference path="../../../util/@types/wss.d.ts" />
 
 // @ts-ignore
 class ClientWS {
-    
+
 
 
 }
