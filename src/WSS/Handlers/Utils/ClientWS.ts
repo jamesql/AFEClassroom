@@ -1,6 +1,8 @@
 
 // @ts-ignore
 class ClientWS {
+    
+
 
 }
 
@@ -8,6 +10,6 @@ class ClientWS {
     const token = localStorage.getItem("token");
     if (token === null) return window.location.href = "/login";
 
-    
+
 
 })();
