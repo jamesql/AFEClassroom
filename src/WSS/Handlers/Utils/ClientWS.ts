@@ -17,7 +17,7 @@ class ClientWS {
         hb_ack: null
     };
 
-    static async init() {
+    static async init(t: string) {
 
     }
 
@@ -38,16 +38,17 @@ class ClientWS {
     }
 
     static async stopHeartbeat() {
-        
+
     }
 
 
 }
 
 (async () => {
-    const token = localStorage.getItem("token");
-    if (token === null) return window.location.href = "/login";
+    const tkn = localStorage.getItem("token");
+    if (tkn === null) return window.location.href = "/login";
 
-
+    // Start Socket Connection
+    await ClientWS.init(tkn);
 
 })();
