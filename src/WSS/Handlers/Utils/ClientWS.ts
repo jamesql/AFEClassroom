@@ -21,7 +21,21 @@ class ClientWS {
 
     }
 
-    
+    static async msgHandler() {
+
+    }
+
+    static async errorHandler() {
+
+    }
+
+    static async quit() {
+
+    }
+
+    static async startHeartbeat() {
+        
+    }
 
 
 }
