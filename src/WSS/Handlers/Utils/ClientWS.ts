@@ -34,6 +34,10 @@ class ClientWS {
     }
 
     static async startHeartbeat() {
+
+    }
+
+    static async stopHeartbeat() {
         
     }
 
