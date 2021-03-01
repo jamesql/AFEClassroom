@@ -38,7 +38,8 @@ AFEClassroom is a open source virtual classroom project to respond to a AFE prom
 - [ ] Add screenshots of software in use
 
 ### Screenshots
-> Application Home Screen
+> Application Home Screen.
+
 ![apphome](https://cdn.discordapp.com/attachments/592764118398795806/816027841099333652/unknown.png)
 
 ### LICENSE
