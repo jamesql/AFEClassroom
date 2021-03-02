@@ -21,3 +21,8 @@ EXPOSE 80
 EXPOSE 8080
 EXPOSE 1337
 EXPOSE 3306
+
+# Start Application
+ENTRYPOINT [ "ts-node" ]
+
+CMD ["./"]
