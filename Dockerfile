@@ -15,3 +15,9 @@ COPY . /afe
 
 # Install deps
 RUN npm install
+
+# Ports
+EXPOSE 80 
+EXPOSE 8080
+EXPOSE 1337
+EXPOSE 3306
