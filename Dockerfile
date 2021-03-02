@@ -13,3 +13,5 @@ WORKDIR /afe
 # Copy source to workdir
 COPY . /afe
 
+# Install deps
+RUN npm install
