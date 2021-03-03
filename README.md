@@ -36,6 +36,7 @@ AFEClassroom is a open source virtual classroom project to respond to a AFE prom
 - [ ] Assemblys
 - [x] Add scaling for multiple schools
 - [ ] Finish README
+- [ ] Add documentation
 - [x] Add screenshots of software in use
 
 ### Screenshots
