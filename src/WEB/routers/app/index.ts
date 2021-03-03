@@ -20,7 +20,8 @@ app
             else return res.redirect("/app");
     })
     .get("/logout", async(req,res) => {
-        
+        req.session.user = null;
+        res.redirect("/");
     })
     .get("/class", async(req,res) => {
         
