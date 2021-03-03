@@ -12,6 +12,7 @@ AFEClassroom is a open source virtual classroom project to respond to a AFE prom
     ├── WEB                     # Express Server and Front-End
     ├── WS                      # Web Sockets
     └── Launch.ts
+    ./start.cmd                 # Default Start Cmd Script
 
 ## TODO - Roadmap
 - [x] Front End Design
