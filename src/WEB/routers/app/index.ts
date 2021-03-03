@@ -31,6 +31,8 @@ app
         const c = await db.getClassById(c_id);
         if(u_c.findIndex(i=>i.id===c.id) === -1) return res.send("You are not in this class!");
         if (!c) return res.send("404 - Page not found!");
+        if (user.permission === "teacher") res.render("pages/meetingteacher", []);
+        else res.render("pages/meeting", []);
 
     })
     .get("/classroom/:id", async(req,res) => {
