@@ -23,8 +23,15 @@ app
         req.session.user = null;
         res.redirect("/");
     })
-    .get("/class", async(req,res) => {
-        
+    .get("/class/:id", async(req,res) => {
+        const user = req.session.user;
+        if (!user) return res.redirect("/app/login");
+        const u_c = await db.getUserClasses(user.id);
+        const c_id = req.params.id;
+        const c = await db.getClassById(c_id);
+        if(u_c.findIndex(i=>i.id===c.id) === -1) return res.send("You are not in this class!");
+        if (!c) return res.send("404 - Page not found!");
+
     })
     .get("/classroom/:id", async(req,res) => {
         const user = req.session.user;
