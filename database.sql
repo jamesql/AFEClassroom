@@ -1,1 +1,0 @@
-/** AFEClassroom MySQL Database Structure **/
