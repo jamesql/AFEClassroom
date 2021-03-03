@@ -48,6 +48,7 @@ AFEClassroom is a open source virtual classroom project to respond to a AFE prom
 ![classworksectiontv](https://cdn.discordapp.com/attachments/811688896479756351/816493652225425448/unknown.png)
 
 > Login Page.
+
 ![loginpage](https://cdn.discordapp.com/attachments/811688896479756351/816498817863516160/unknown.png)
 
 > Application Console.
