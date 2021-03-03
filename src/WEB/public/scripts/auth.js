@@ -5,7 +5,7 @@ const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}
 
 function login()
 {
-    fetch(`http://${window.location.hostname}/api/login`, {
+    fetch(`http://${window.location.hostname}${!!window.location.port?":"+window.location.port:""}/api/login`, {
         method: "POST",
         body: JSON.stringify({
             username: $("#email").val(),
@@ -22,14 +22,14 @@ function login()
         else {
             const token = d["user"].id;
             localStorage.setItem("token", token);
-            window.location.href = `http://${window.location.hostname}/app`;
+            window.location.href = `http://${window.location.hostname}${!!window.location.port?":"+window.location.port:""}/app`;
         }
     });
 }
 
 function register()
 {
-    fetch(`http://${window.location.hostname}/api/register`, {
+    fetch(`http://${window.location.hostname}${!!window.location.port?":"+window.location.port:""}/api/register`, {
         method: "POST",
         body: JSON.stringify({
             username: $("#email").val(),
