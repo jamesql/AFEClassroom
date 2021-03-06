@@ -21,4 +21,8 @@ declare global {
 
             }
         }
+
+        namespace Packets {
+            
+        }
 }
