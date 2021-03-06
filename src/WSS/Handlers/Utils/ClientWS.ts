@@ -18,14 +18,30 @@ class ClientWS {
     };
 
     static async init(t: string) {
+        this.props.init = Date.now();
+        this.socket = new WebSocket(`ws://localhost:1337`);
+        this.props.connect = Date.now();
+
+        this.socket.addEventListener("message", this.msgHandler.bind(this));
+        this.socket.addEventListener("open", this.handle.bind(this));
+        this.socket.addEventListener("close", this.closeHandler.bind(this));
+        this.socket.addEventListener("error", this.errorHandler.bind(this));
 
     }
 
-    static async msgHandler() {
+    static async handle(ev: Event) {
 
     }
 
-    static async errorHandler() {
+    static async msgHandler(ev: MessageEvent<string>) {
+
+    }
+
+    static async errorHandler(ev: Event) {
+
+    }
+
+    static async closeHandler(ev: CloseEvent) {
 
     }
 
