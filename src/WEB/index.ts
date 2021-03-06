@@ -36,7 +36,7 @@ app
     .set("view options", { pretty: true })
     .use(express.json())
     .use(express.urlencoded({ extended: false }))
-    .use(morgan("[AFEClassroom - :domain] :method :status-c :response-time ms - :res[content-length]"))
+    .use(morgan(leeks.grey("[AFEClassroom - :domain] :method :status-c :response-time ms - :res[content-length]")))
     .use(express.static(`${__dirname}/public`))
     .use("/", require("./routers/index").default);
 
