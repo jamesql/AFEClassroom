@@ -3,6 +3,7 @@
 import express from "express";
 import { Authenticate } from "../../../util/Auth"
 import { User } from "../../../DB/Structures";
+import { colors as leeks } from "leeks.js";
 
 const app = express.Router();
 const a = new Authenticate();
@@ -19,12 +20,12 @@ app
         const d = req.body;
         if (!d || !d.username || !d.password) return res.send({code: 400});
         
-        console.log(`[AFEClassroom - API Auth] Attempting to Authorize ${d.username}...`);
+        console.log(leeks.yellow(`[AFEClassroom - API Auth] Attempting to Authorize ${d.username}...`));
         const r = await a.authLogin(d.username, d.password);
 
         if (r.authed) {
                  req.session.user = r.user;
-                 console.log(`[AFEClassroom - API Auth] Authorized ${r.user.id} (${r.user.name})!`);
+                 console.log(leeks.green(`[AFEClassroom - API Auth] Authorized ${r.user.id} (${r.user.name})!`));
                  return res.send(r);
         } else {
             return res.send(r);

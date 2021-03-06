@@ -25,6 +25,7 @@ export default (async (ws:AFECWS.AFECServer, skt: AFECWS.ClientSocket, rq: Incom
     skt.sendAsync({
         op: OPCodes.HELLO,
         d: {
+            
             heartbeatInterval: HEARTBEAT_INTERVAL,
         }
     });
