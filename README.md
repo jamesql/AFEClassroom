@@ -20,9 +20,10 @@ AFEClassroom is a open source virtual classroom project to respond to a AFE prom
 - [x] Database Structure
 - [x] Login / Authentication
 - [x] Grading System
+- [x] Video Call Front-End
 - [ ] Basic Assign Class Schedule System
 - [ ] CDN
-- [ ] Finish WebSocket
+- [x] Finish WebSocket
 - [ ] Video/Audio
 - [ ] Screensharing
 - [ ] Chat
@@ -34,9 +35,8 @@ AFEClassroom is a open source virtual classroom project to respond to a AFE prom
 - [x] School Anouncements 
 - [ ] Chrome Reminder Extension
 - [ ] Add Redis
-- [ ] Assemblys
 - [x] Add scaling for multiple schools
-- [ ] Finish README
+- [x] Finish README
 - [ ] Add documentation
 - [x] Add screenshots of software in use
 
