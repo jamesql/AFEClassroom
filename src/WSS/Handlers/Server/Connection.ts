@@ -6,6 +6,12 @@ export default (async (ws:AFECWS.AFECServer, skt: AFECWS.ClientSocket, rq: Incom
     console.log(`[AFEClassroom - WS] Incoming Connection from ${rq.connection.remoteAddress} (${skt.id})`);
 
     // init props
+    skt.props = {
+        userId: null,
+        sequence: 0,
+        lastHeartbeat: Date.now()
+    }    
+
     
 
 });
