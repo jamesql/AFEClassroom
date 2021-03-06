@@ -1,4 +1,5 @@
 import { IncomingMessage } from "http";
+import { OPCodes } from "util/WSValues";
 
 
 export default (async (ws:AFECWS.AFECServer, skt: AFECWS.ClientSocket, rq: IncomingMessage) => {
@@ -22,7 +23,10 @@ export default (async (ws:AFECWS.AFECServer, skt: AFECWS.ClientSocket, rq: Incom
 
     // send hello packet
     skt.sendAsync({
-        
+        op: OPCodes.HELLO,
+        d: {
+            heartbeatInterval: 3e4,
+        }
     });
 
 });
