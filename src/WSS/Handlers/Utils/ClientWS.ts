@@ -30,7 +30,7 @@ class ClientWS {
     }
 
     static async handle(ev: Event) {
-
+        
     }
 
     static async msgHandler(ev: MessageEvent<string>) {
