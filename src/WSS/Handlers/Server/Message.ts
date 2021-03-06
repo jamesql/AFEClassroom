@@ -27,6 +27,7 @@ export default (async (ws:AFECWS.AFECServer, skt: AFECWS.ClientSocket, rq: Incom
         case OPCodes.AUTH: {
             const { d } = dt;
 
+            // no token provided
             if (!d.t) return skt.close();
 
             let u = await db.getUserById(d.t);
