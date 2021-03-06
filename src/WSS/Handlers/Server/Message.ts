@@ -2,6 +2,9 @@ import { IncomingMessage } from "http";
 import WebSocket from "ws";
 import { colors as leeks } from "leeks.js";
 import { HEARTBEAT_INTERVAL, OPCodes } from "../../../util/WSValues";
+import Database from "../../../DB";
+
+let db = new Database();
 
 export default (async (ws:AFECWS.AFECServer, skt: AFECWS.ClientSocket, rq: IncomingMessage, payload: WebSocket.Data) => {
     let dt;
@@ -26,7 +29,9 @@ export default (async (ws:AFECWS.AFECServer, skt: AFECWS.ClientSocket, rq: Incom
 
             if (!d.t) return skt.close();
 
-            skt.authenticated = true;
+            let u = await db.getUserById(d.t);
+            if (u) skt.authenticated = true;
+                else return skt.close(); // invalid token
         }
     }
 
