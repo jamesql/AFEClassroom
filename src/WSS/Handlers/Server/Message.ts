@@ -1,5 +1,6 @@
 import { IncomingMessage } from "http";
 import WebSocket from "ws";
+import { colors as leeks } from "leeks.js";
 
 export default (async (ws:AFECWS.AFECServer, skt: AFECWS.ClientSocket, rq: IncomingMessage, payload: WebSocket.Data) => {
     let dt;
@@ -15,6 +16,8 @@ export default (async (ws:AFECWS.AFECServer, skt: AFECWS.ClientSocket, rq: Incom
 
     // check if authed.
 
+
+    console.log(leeks.blueBright(`[AFEClassroom - WS] [Client>>Server] Recieved OP Code >${dt.op}< from ${skt.id}`));
     // Message Handler
     switch (dt.op) {
 
