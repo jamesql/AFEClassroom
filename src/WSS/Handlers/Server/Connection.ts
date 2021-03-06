@@ -15,8 +15,8 @@ export default (async (ws:AFECWS.AFECServer, skt: AFECWS.ClientSocket, rq: Incom
 
     skt
         .on("message", require("./Message").default.bind(null,ws,skt,rq))
-        .on("close", require("./Close").default.bind(null,ws,skt,rq))
-        .on("error", require("./error").default.bind(null,ws,skt,rq));
+        //.on("close", require("./Close").default.bind(null,ws,skt,rq))
+        //.on("error", require("./error").default.bind(null,ws,skt,rq));
 
 
     skt.authenticated = false;
