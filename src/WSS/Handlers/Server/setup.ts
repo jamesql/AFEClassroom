@@ -9,6 +9,9 @@ import cfg from "../../../config"
 export default async function StartWSS(server: http.Server) : Promise<AFECWS.AFECServer> {
     const ws = new WebSocket.Server({ server }) as AFECWS.AFECServer;
 
+    ws
+        .on("connection", require("./Connection").default.bind(null,ws));
+
     // heartbeat
     setInterval(() => {
        const d = Date.now();
