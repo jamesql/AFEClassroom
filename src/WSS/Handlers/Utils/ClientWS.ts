@@ -41,6 +41,10 @@ class ClientWS {
 
     }
 
+    static async sendMsg() {
+
+    }
+
 
 }
 
