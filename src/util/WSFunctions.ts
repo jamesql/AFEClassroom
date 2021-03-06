@@ -11,3 +11,9 @@ Object.defineProperty(WebSocket.prototype, "sendAsync", {
 		);
 	}
 });
+
+Object.defineProperty(WebSocket.prototype, "id", {
+    get(this: AFECWS.ClientSocket) {
+        return this._id || (this._id = Date.now().toString());
+    }
+});

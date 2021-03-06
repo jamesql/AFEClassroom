@@ -8,8 +8,11 @@ declare global {
 
             interface ClientSocket extends WebSocket {
                 type: "client";
-                id: string;
                 authenticated: boolean;
+
+                // ids
+                _id: string;
+                readonly id: string;
 
                 props: {
                     userId: string | null;
