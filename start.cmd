@@ -1,5 +1,9 @@
 @echo off
 cls
 title AFEClassroom Console
+echo [Pre-Launch] Building Scripts.....
+start cmd.exe /c build.cmd
+echo [Launch] Launching AFEClassroom.....
 ts-node ./
+echo [Exit] Closing AFEClassroom.....
 pause
