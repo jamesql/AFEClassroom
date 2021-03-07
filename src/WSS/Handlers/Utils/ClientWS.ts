@@ -55,7 +55,7 @@ class ClientWS {
 
             // READY > Start Heartbeat
             case 4: {
-
+                this.startHeartbeat(this.hb_int);
             }
         }
     }
@@ -73,7 +73,6 @@ class ClientWS {
     }
 
     static async startHeartbeat(int: number) {
-        this.hb_int = int;
         this.timeout = setInterval(() => {
             this.props.hb = Date.now();
             this.sendMsg({

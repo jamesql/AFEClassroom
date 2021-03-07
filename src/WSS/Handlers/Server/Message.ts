@@ -31,7 +31,12 @@ export default (async (ws:AFECWS.AFECServer, skt: AFECWS.ClientSocket, rq: Incom
             if (!d.t) return skt.close();
 
             let u = await db.getUserById(d.t);
-            if (u) skt.authenticated = true;
+            if (u) { 
+                skt.authenticated = true; 
+                skt.sendAsync({
+                    op: OPCodes.READY
+                });
+            }
                 else return skt.close(); // invalid token
         }
     }

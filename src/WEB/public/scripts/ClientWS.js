@@ -84,6 +84,7 @@ var ClientWS = /** @class */ (function () {
                     }
                     // READY > Start Heartbeat
                     case 4: {
+                        this.startHeartbeat(this.hb_int);
                     }
                 }
                 return [2 /*return*/];
@@ -115,7 +116,6 @@ var ClientWS = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                this.hb_int = int;
                 this.timeout = setInterval(function () {
                     _this.props.hb = Date.now();
                     _this.sendMsg({
