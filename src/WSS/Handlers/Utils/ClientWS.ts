@@ -34,7 +34,20 @@ class ClientWS {
     }
 
     static async msgHandler(ev: MessageEvent<string>) {
+        const dt = JSON.parse(ev.data);
+        if (dt.s) this.sq = dt.s;
+        switch (dt.op)
+        {
+            // HELLO > Respond With Auth
+            case 0: {
 
+            }
+
+            // READY > Start Heartbeat
+            case 4: {
+
+            }
+        }
     }
 
     static async errorHandler(ev: Event) {
