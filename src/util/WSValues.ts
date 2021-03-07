@@ -3,6 +3,7 @@ export const OPCodes = {
     HEARTBEAT: 1,
     HEARTBEAT_ACK: 2,
     AUTH: 3,
+    READY: 4,
     ERROR: 20,
 } as const;
 
