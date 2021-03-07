@@ -22,6 +22,8 @@ class ClientWS {
         this.socket = new WebSocket(`ws://localhost:1337`);
         this.props.connect = Date.now();
 
+        this.token = t;
+
         this.socket.addEventListener("message", this.msgHandler.bind(this));
         this.socket.addEventListener("open", this.handle.bind(this));
         this.socket.addEventListener("close", this.closeHandler.bind(this));
@@ -40,7 +42,15 @@ class ClientWS {
         {
             // HELLO > Respond With Auth
             case 0: {
-
+                this.props.hello = Date.now();
+                this.sendMsg({
+                    op: 3,
+                    d: {
+                        t: this.token
+                    }
+                });
+                this.hb_int = dt.d.heartbeatInterval;
+                break;
             }
 
             // READY > Start Heartbeat
@@ -62,16 +72,23 @@ class ClientWS {
 
     }
 
-    static async startHeartbeat() {
-
+    static async startHeartbeat(int: number) {
+        this.hb_int = int;
+        this.timeout = setInterval(() => {
+            this.props.hb = Date.now();
+            this.sendMsg({
+                op:2,
+                d: this.sq
+            });
+        }, int);
     }
 
     static async stopHeartbeat() {
-
+        if (this.timeout) clearInterval(this.timeout);
     }
 
-    static async sendMsg() {
-
+    static async sendMsg(d: any) {
+        this.socket.send(JSON.stringify(d));
     }
 
 
