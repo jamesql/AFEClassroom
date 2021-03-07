@@ -39,6 +39,18 @@ export default (async (ws:AFECWS.AFECServer, skt: AFECWS.ClientSocket, rq: Incom
             }
                 else return skt.close(); // invalid token
         }
+
+        case OPCodes.HEARTBEAT: {
+            const { d } = dt;
+            const s = Number(d);
+
+            skt.props.lastHeartbeat = Date.now();
+
+            skt.sendAsync({
+                op: OPCodes.HEARTBEAT_ACK,
+                s: ++skt.props.sequence
+            });
+        }
     }
 
 });

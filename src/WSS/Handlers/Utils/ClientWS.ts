@@ -53,9 +53,15 @@ class ClientWS {
                 break;
             }
 
+            // HEARTBEAT_ACK
+            case 2: {
+                this.props.hb_ack = Date.now();
+                console.log(`[AFEClassroom - WS] Heartbeat acknowledged...`);
+            }
+
             // READY > Start Heartbeat
             case 4: {
-                this.startHeartbeat(this.hb_int);
+                if(!this.timeout) this.startHeartbeat(this.hb_int);
             }
         }
     }
@@ -76,7 +82,7 @@ class ClientWS {
         this.timeout = setInterval(() => {
             this.props.hb = Date.now();
             this.sendMsg({
-                op:2,
+                op:1,
                 d: this.sq
             });
         }, int);
@@ -87,6 +93,7 @@ class ClientWS {
     }
 
     static async sendMsg(d: any) {
+        console.log(d);
         this.socket.send(JSON.stringify(d));
     }
 

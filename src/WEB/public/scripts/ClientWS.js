@@ -82,9 +82,15 @@ var ClientWS = /** @class */ (function () {
                         this.hb_int = dt.d.heartbeatInterval;
                         break;
                     }
+                    // HEARTBEAT_ACK
+                    case 2: {
+                        this.props.hb_ack = Date.now();
+                        console.log("[AFEClassroom - WS] Heartbeat acknowledged...");
+                    }
                     // READY > Start Heartbeat
                     case 4: {
-                        this.startHeartbeat(this.hb_int);
+                        if (!this.timeout)
+                            this.startHeartbeat(this.hb_int);
                     }
                 }
                 return [2 /*return*/];
@@ -119,7 +125,7 @@ var ClientWS = /** @class */ (function () {
                 this.timeout = setInterval(function () {
                     _this.props.hb = Date.now();
                     _this.sendMsg({
-                        op: 2,
+                        op: 1,
                         d: _this.sq
                     });
                 }, int);
@@ -139,6 +145,7 @@ var ClientWS = /** @class */ (function () {
     ClientWS.sendMsg = function (d) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
+                console.log(d);
                 this.socket.send(JSON.stringify(d));
                 return [2 /*return*/];
             });
