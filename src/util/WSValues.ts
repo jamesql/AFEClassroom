@@ -7,4 +7,4 @@ export const OPCodes = {
     ERROR: 20,
 } as const;
 
-export const HEARTBEAT_INTERVAL = 3e4 as const;
+export const HEARTBEAT_INTERVAL = 6e4 as const;
